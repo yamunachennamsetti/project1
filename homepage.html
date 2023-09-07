@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    {% include 'cdnlines.html' %}
+    <title></title>
+</head>
+<body>
+  <h1 class="text-center display-2 font-weight-bold">IT Vedant students name</h1>
+  {% if students %}
+  {% for student in students %}
+  <h2 class="text-center"><a href="{% url 'student_data' student.id %}">{{student.first_name}}</a></h2>  
+  {% endfor %}
+  {% else %}
+  <h4 class="text-center">No students data available</h4>
+  {% endif %}
+  <div class="text-center">
+    <a href="{% url 'add_student' %}" class="btn btn-outline-success">Add new student</a>
+  </div>
+</body>
+</html>

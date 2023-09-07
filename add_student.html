@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+   {% include 'cdnlines.html' %}
+    <title></title>
+</head>
+<style media="screen">
+    input[name]{
+        margin-top:5
+    }
+</style>
+<body>
+    <h1 class="text-center">Enter Student Data here...</h1>
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-3 col-md-6">
+                <form method="post">
+                    {% csrf_token %}
+<input type="text" name="fname" class="form-control" placeholder="first_name here...">
+<input type="text" name="lname" class="form-control" placeholder="last_name here...">
+<input type="email" name="email" class="form-control" placeholder="email here...">
+<input type="number" name="mobile" class="form-control" placeholder="mobile no. here...">
+<input type="text" name="course" class="form-control" placeholder="course">
+<input type="number" name="fee" class="form-control" placeholder="fee">
+<input type="date" name="dob" class="form-control" placeholder="dob">
+<input type="text" name="location" class="form-control" placeholder="location here...">
+<center>
+    <input type="submit" value="Add" class="btn btn-lg btn-outline-success">
+    <input type="reset" value="Clear" class="btn btn-lg btn-outline-danger"><br>
+    <a href="{% url 'homepage' %}" class="btn btn-outline-primary mt-2">Students List</a>
+</center>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
